@@ -156,4 +156,40 @@
   <data name="Success" xml:space="preserve">
     <value>Informations renvoyées avec succès !</value>
   </data>
+  <data name="DepartmentIsNotExist" xml:space="preserve">
+    <value>La section n'existe pas.</value>
+  </data>
+  <data name="DepartmentId" xml:space="preserve">
+    <value>Section</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>mot de passe</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Confirmez le mot de passe</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>e-mail</value>
+  </data>
+  <data name="ConfirmPasswordNotMatch" xml:space="preserve">
+    <value>Le mot de passe et le mot de passe de confirmation ne correspondent pas.</value>
+  </data>
+  <data name="PasswordRequiresNonAlphanumeric" xml:space="preserve">
+    <value>Les mots de passe doivent comporter au moins un caractère non alphanumérique.</value>
+  </data>
+  <data name="PasswordRequiresDigit" xml:space="preserve">
+    <value>Les mots de passe doivent comporter au moins un chiffre (« 0 » à « 9 »).</value>
+  </data>
+  <data name="PasswordRequiresUpper" xml:space="preserve">
+    <value>Les mots de passe doivent contenir au moins une majuscule (« A » à « Z »).</value>
+  </data>
+  <data name="InvalidEmail" xml:space="preserve">
+    <value>Email invalide</value>
+  </data>
+  <data name="SignUpSuccess" xml:space="preserve">
+    <value>Compte enregistré avec succès</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>nom d'utilisateur</value>
+  </data>
 </root>

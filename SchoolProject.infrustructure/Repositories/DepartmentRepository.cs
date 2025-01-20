@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using SchoolProject.Data.Entities;
 using SchoolProject.infrustructure.Abstracts;
-using SchoolProject.infrustructure.Data;
+using SchoolProject.infrustructure.DbContext;
 using SchoolProject.infrustructure.InfrustructureBase;
 
 namespace SchoolProject.infrustructure.Repositories;

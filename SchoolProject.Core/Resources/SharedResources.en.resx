@@ -156,4 +156,40 @@
   <data name="Success" xml:space="preserve">
     <value>Information returned successfully!</value>
   </data>
+  <data name="DepartmentIsNotExist" xml:space="preserve">
+    <value>is NotExist</value>
+  </data>
+  <data name="DepartmentId" xml:space="preserve">
+    <value>Section</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>ConfirmPassword</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="ConfirmPasswordNotMatch" xml:space="preserve">
+    <value>Password and confirm password do not match.</value>
+  </data>
+  <data name="PasswordRequiresNonAlphanumeric" xml:space="preserve">
+    <value>Passwords must have at least one non alphanumeric character.</value>
+  </data>
+  <data name="PasswordRequiresDigit" xml:space="preserve">
+    <value>Passwords must have at least one digit ('0'-'9').</value>
+  </data>
+  <data name="PasswordRequiresUpper" xml:space="preserve">
+    <value>Passwords must have at least one uppercase ('A'-'Z').</value>
+  </data>
+  <data name="InvalidEmail" xml:space="preserve">
+    <value>InvalidEmail</value>
+  </data>
+  <data name="SignUpSuccess" xml:space="preserve">
+    <value>Account registered successfully</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>Username</value>
+  </data>
 </root>

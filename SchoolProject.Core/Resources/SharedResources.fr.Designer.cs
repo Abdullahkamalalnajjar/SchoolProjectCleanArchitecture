@@ -69,6 +69,24 @@ namespace SchoolProject.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Confirmez le mot de passe.
+        /// </summary>
+        internal static string ConfirmPassword {
+            get {
+                return ResourceManager.GetString("ConfirmPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Le mot de passe et le mot de passe de confirmation ne correspondent pas..
+        /// </summary>
+        internal static string ConfirmPasswordNotMatch {
+            get {
+                return ResourceManager.GetString("ConfirmPasswordNotMatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ajouté avec succès.
         /// </summary>
         internal static string Created {
@@ -83,6 +101,42 @@ namespace SchoolProject.Core.Resources {
         internal static string Deleted {
             get {
                 return ResourceManager.GetString("Deleted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Section.
+        /// </summary>
+        internal static string DepartmentId {
+            get {
+                return ResourceManager.GetString("DepartmentId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to La section n&apos;existe pas..
+        /// </summary>
+        internal static string DepartmentIsNotExist {
+            get {
+                return ResourceManager.GetString("DepartmentIsNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to e-mail.
+        /// </summary>
+        internal static string Email {
+            get {
+                return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email invalide.
+        /// </summary>
+        internal static string InvalidEmail {
+            get {
+                return ResourceManager.GetString("InvalidEmail", resourceCulture);
             }
         }
         
@@ -132,6 +186,42 @@ namespace SchoolProject.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to mot de passe.
+        /// </summary>
+        internal static string Password {
+            get {
+                return ResourceManager.GetString("Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Les mots de passe doivent comporter au moins un chiffre (« 0 » à « 9 »)..
+        /// </summary>
+        internal static string PasswordRequiresDigit {
+            get {
+                return ResourceManager.GetString("PasswordRequiresDigit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Les mots de passe doivent comporter au moins un caractère non alphanumérique..
+        /// </summary>
+        internal static string PasswordRequiresNonAlphanumeric {
+            get {
+                return ResourceManager.GetString("PasswordRequiresNonAlphanumeric", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Les mots de passe doivent contenir au moins une majuscule (« A » à « Z »)..
+        /// </summary>
+        internal static string PasswordRequiresUpper {
+            get {
+                return ResourceManager.GetString("PasswordRequiresUpper", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to téléphone.
         /// </summary>
         internal static string Phone {
@@ -150,6 +240,24 @@ namespace SchoolProject.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Compte enregistré avec succès.
+        /// </summary>
+        internal static string SignUpSuccess {
+            get {
+                return ResourceManager.GetString("SignUpSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Informations renvoyées avec succès !.
+        /// </summary>
+        internal static string Success {
+            get {
+                return ResourceManager.GetString("Success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Le processus est incomplet !.
         /// </summary>
         internal static string Unprocess {
@@ -164,6 +272,15 @@ namespace SchoolProject.Core.Resources {
         internal static string Updated {
             get {
                 return ResourceManager.GetString("Updated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to nom d&apos;utilisateur.
+        /// </summary>
+        internal static string UserName {
+            get {
+                return ResourceManager.GetString("UserName", resourceCulture);
             }
         }
     }

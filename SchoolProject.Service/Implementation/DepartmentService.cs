@@ -100,5 +100,7 @@ public class DepartmentService(IDepartmentRepository departmentRepository) : IDe
         return departmentList;
     }
 
+    public async Task<bool> IsDepartmentExist(int? departmentId) => await _departmentRepository.GetTableNoTracking().AnyAsync(d => d.Id == departmentId);
+
 
 }

@@ -9,15 +9,16 @@ namespace SchoolProject.Core.Features.Students.Commands.Validatiors
     public class AddStudentValidator : AbstractValidator<AddStudentCommand>
     {
         private readonly IStudentService _studentService;
+        private readonly IDepartmentService _departmentService;
         private readonly IStringLocalizer<SharedResources> _stringLocalizer;
 
-        public AddStudentValidator(IStudentService studentService , IStringLocalizer<SharedResources> stringLocalizer)
+        public AddStudentValidator(IStudentService studentService, IDepartmentService departmentService, IStringLocalizer<SharedResources> stringLocalizer)
         {
             _studentService = studentService;
+            _departmentService = departmentService;
             _stringLocalizer = stringLocalizer;
             ApplyValidationsRules();
             ApplyCustomValidations();
-    
         }
 
         public void ApplyValidationsRules()
@@ -36,6 +37,10 @@ namespace SchoolProject.Core.Features.Students.Commands.Validatiors
             RuleFor(n => n.Name)
                 .MustAsync(async (Key, CancellationToken) => !await _studentService.IsNameExist(Key))
                 .WithMessage(_stringLocalizer[SharedResourcesKeys.IsExist]);
+
+            RuleFor(d => d.DepartmentId)
+               .MustAsync(async (Key, CancellationToken) => await _departmentService.IsDepartmentExist(Key))
+               .WithMessage(_stringLocalizer[SharedResourcesKeys.DepartmentIsNotExist]);
         }
 
     }

@@ -157,4 +157,37 @@
   <data name="Success" xml:space="preserve">
     <value />
   </data>
+  <data name="DepartmentIsNotExist" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DepartmentId" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ConfirmPasswordNotMatch" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PasswordRequiresNonAlphanumeric" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PasswordRequiresDigit" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PasswordRequiresUpper" xml:space="preserve">
+    <value />
+  </data>
+  <data name="InvalidEmail" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SignUpSuccess" xml:space="preserve">
+    <value />
+  </data>
 </root>

@@ -156,4 +156,40 @@
   <data name="Success" xml:space="preserve">
     <value>تم إرجاع المعلومات بنجاح!</value>
   </data>
+  <data name="DepartmentIsNotExist" xml:space="preserve">
+    <value>غير موجود.</value>
+  </data>
+  <data name="DepartmentId" xml:space="preserve">
+    <value>القسم</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>كلمة المرور</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>تأكيد كلمة المرور</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>البريد الإكتروني</value>
+  </data>
+  <data name="ConfirmPasswordNotMatch" xml:space="preserve">
+    <value>كلمة المرور وتاكيد كلمه المرور غير متطابقين</value>
+  </data>
+  <data name="PasswordRequiresNonAlphanumeric" xml:space="preserve">
+    <value>يجب أن تحتوي كلمة المرور على حرف غير أبجدي رقمي واحد على الأقل.</value>
+  </data>
+  <data name="PasswordRequiresDigit" xml:space="preserve">
+    <value>يجب أن تحتوي كلمة المرور على رقم واحد على الأقل ('0'-'9').</value>
+  </data>
+  <data name="PasswordRequiresUpper" xml:space="preserve">
+    <value>يجب أن تحتوي كلمة المرور على حرف كبير واحد على الأقل ('A'-'Z').</value>
+  </data>
+  <data name="InvalidEmail" xml:space="preserve">
+    <value>البريد الإلكتروني غير صالح</value>
+  </data>
+  <data name="SignUpSuccess" xml:space="preserve">
+    <value>تم تسجيل الحساب بنجاح </value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>إسم المستخدم</value>
+  </data>
 </root>

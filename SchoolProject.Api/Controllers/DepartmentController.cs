@@ -31,7 +31,7 @@ namespace SchoolProject.Api.Controllers
             var response = await Mediator.Send(request);
             return Ok(response);
         }
-        ////GET Pagination
+        //GET Pagination
         [HttpGet(Router.DepartmentRouting.Paginated)]
         public async Task<IActionResult> GetDepartmentPaginated([FromQuery] GetDepartmentPaginatedListQuery query)
         {

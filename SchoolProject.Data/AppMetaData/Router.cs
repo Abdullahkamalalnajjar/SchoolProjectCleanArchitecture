@@ -2,20 +2,19 @@
 {
     public static class Router
     {
+        private const string SingleRoute = "{id}";
+        private const string ListRoute = "List";
 
-        public const string SingleRoute = "{id}";
-        public const string ListRoute = "List";
 
-
-        public const string root = "Api";
-        public const string version = "V1";
-        public const string Rule = root + "/" + version;
+        private const string root = "Api";
+        private const string version = "V1";
+        private const string Rule = root + "/" + version;
 
 
 
         public static class StudentRouting
         {
-            public const string Prefix = Rule + "/" + "Student/";
+            private const string Prefix = Rule + "/" + "Student/";
             public const string List = Prefix + ListRoute;
             public const string GetById = Prefix + SingleRoute;
             public const string Create = Prefix + "Create";
@@ -25,7 +24,17 @@
         }
         public static class DepartmentRouting
         {
-            public const string Prefix = Rule + "/" + "Department/";
+            private const string Prefix = Rule + "/" + "Department/";
+            public const string List = Prefix + ListRoute;
+            public const string GetById = Prefix + SingleRoute;
+            public const string Create = Prefix + "Create";
+            public const string Edit = Prefix + "Edit";
+            public const string Delete = Prefix + "Delete/{id}";
+            public const string Paginated = Prefix + "Paginated";
+        }
+        public static class UserRouting
+        {
+            private const string Prefix = Rule + "/" + "AppUser/";
             public const string List = Prefix + ListRoute;
             public const string GetById = Prefix + SingleRoute;
             public const string Create = Prefix + "Create";

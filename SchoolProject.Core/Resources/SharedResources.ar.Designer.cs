@@ -69,6 +69,24 @@ namespace SchoolProject.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to تأكيد كلمة المرور.
+        /// </summary>
+        internal static string ConfirmPassword {
+            get {
+                return ResourceManager.GetString("ConfirmPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to كلمة المرور وتاكيد كلمه المرور غير متطابقين.
+        /// </summary>
+        internal static string ConfirmPasswordNotMatch {
+            get {
+                return ResourceManager.GetString("ConfirmPasswordNotMatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to تمت الإضافة بنجاح !.
         /// </summary>
         internal static string Created {
@@ -83,6 +101,42 @@ namespace SchoolProject.Core.Resources {
         internal static string Deleted {
             get {
                 return ResourceManager.GetString("Deleted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to القسم.
+        /// </summary>
+        internal static string DepartmentId {
+            get {
+                return ResourceManager.GetString("DepartmentId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to غير موجود..
+        /// </summary>
+        internal static string DepartmentIsNotExist {
+            get {
+                return ResourceManager.GetString("DepartmentIsNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to البريد الإكتروني.
+        /// </summary>
+        internal static string Email {
+            get {
+                return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to البريد الإلكتروني غير صالح.
+        /// </summary>
+        internal static string InvalidEmail {
+            get {
+                return ResourceManager.GetString("InvalidEmail", resourceCulture);
             }
         }
         
@@ -132,6 +186,42 @@ namespace SchoolProject.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to كلمة المرور.
+        /// </summary>
+        internal static string Password {
+            get {
+                return ResourceManager.GetString("Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to يجب أن تحتوي كلمة المرور على رقم واحد على الأقل (&apos;0&apos;-&apos;9&apos;)..
+        /// </summary>
+        internal static string PasswordRequiresDigit {
+            get {
+                return ResourceManager.GetString("PasswordRequiresDigit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to يجب أن تحتوي كلمة المرور على حرف غير أبجدي رقمي واحد على الأقل..
+        /// </summary>
+        internal static string PasswordRequiresNonAlphanumeric {
+            get {
+                return ResourceManager.GetString("PasswordRequiresNonAlphanumeric", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to يجب أن تحتوي كلمة المرور على حرف كبير واحد على الأقل (&apos;A&apos;-&apos;Z&apos;)..
+        /// </summary>
+        internal static string PasswordRequiresUpper {
+            get {
+                return ResourceManager.GetString("PasswordRequiresUpper", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to رقم الهاتف.
         /// </summary>
         internal static string Phone {
@@ -150,6 +240,24 @@ namespace SchoolProject.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to تم تسجيل الحساب بنجاح .
+        /// </summary>
+        internal static string SignUpSuccess {
+            get {
+                return ResourceManager.GetString("SignUpSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تم إرجاع المعلومات بنجاح!.
+        /// </summary>
+        internal static string Success {
+            get {
+                return ResourceManager.GetString("Success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to العملية غير مكتملة !.
         /// </summary>
         internal static string Unprocess {
@@ -164,6 +272,15 @@ namespace SchoolProject.Core.Resources {
         internal static string Updated {
             get {
                 return ResourceManager.GetString("Updated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to إسم المستخدم.
+        /// </summary>
+        internal static string UserName {
+            get {
+                return ResourceManager.GetString("UserName", resourceCulture);
             }
         }
     }

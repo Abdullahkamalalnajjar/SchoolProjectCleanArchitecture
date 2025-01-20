@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore;
-using SchoolProject.infrustructure.Data;
+using SchoolProject.infrustructure.DbContext;
 namespace SchoolProject.infrustructure.InfrustructureBase
 {
 

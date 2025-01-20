@@ -4,7 +4,7 @@ using Microsoft.Extensions.Options;
 using SchoolProject.Core;
 using SchoolProject.Core.Middleware;
 using SchoolProject.infrustructure;
-using SchoolProject.infrustructure.Data;
+using SchoolProject.infrustructure.DbContext;
 using SchoolProject.Service;
 using System.Globalization;
 
@@ -18,7 +18,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 #region Dependencies
-builder.Services.AddInfrustructureDependencies().AddCoreDependencies().AddServiceDependencies();
+builder.Services.AddInfrustructureDependencies().AddCoreDependencies().AddServiceDependencies().AddServiceRegisteration();
 #endregion
 
 #region Connection
@@ -44,6 +44,22 @@ builder.Services.Configure<RequestLocalizationOptions>(options =>
     options.DefaultRequestCulture = new RequestCulture("en-US");
     options.SupportedCultures = supportedCultures;
     options.SupportedUICultures = supportedCultures;
+});
+
+#endregion
+
+
+#region AllowCORS
+var CORS = "_cors";
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: CORS,
+                      policy =>
+                      {
+                          policy.AllowAnyHeader();
+                          policy.AllowAnyMethod();
+                          policy.AllowAnyOrigin();
+                      });
 });
 
 #endregion
@@ -85,11 +101,9 @@ app.UseSwaggerUI();
 var options = app.Services.GetService<IOptions<RequestLocalizationOptions>>();
 app.UseRequestLocalization(options.Value);
 #endregion
-
 app.UseMiddleware<ErrorHandlerMiddleware>();
-
 app.UseHttpsRedirection();
-
+app.UseCors(CORS);
 app.UseAuthorization();
 
 app.MapControllers();
