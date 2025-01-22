@@ -49,11 +49,17 @@ namespace SchoolProject.Core.Features.Students.Queries.Handlers
 
         public async Task<PaginatedResult<GetStudentPaginatedListResponse>> Handle(GetStudentPaginatedListQuery request, CancellationToken cancellationToken)
         {
-            //ده بديل ال mapping لي ؟ عشان لو عملت ماب هحتاج اجيب ال table كله ف بتالي انا مستفدتش ب paginated ف عمليه ال expression بديله لها 
-            Expression<Func<Student, GetStudentPaginatedListResponse>> expression = e => new GetStudentPaginatedListResponse(e.Id, e.Name, e.Address, e.Phone, e.Department.Name);
-            var Filteration = _studentService.FilterStudentsQueryable(request.Ordering, request.Search);
-            var paginatedList = await Filteration.Select(expression).ToPaginatedListAsync(request.PageNumber, request.PageSize);
+            // Apply filtering and ordering
+            var filteredStudents = _studentService.FilterStudentPaginatedQuerable(request.Ordering, request.Search);
+
+            // Map filtered students to the response type
+            var studentsMapper = _mapper.ProjectTo<GetStudentPaginatedListResponse>(filteredStudents);
+
+            // Paginate the mapped result
+            var paginatedList = await studentsMapper.ToPaginatedListAsync(request.PageNumber, request.PageSize);
+
             return paginatedList;
         }
+
     }
 }

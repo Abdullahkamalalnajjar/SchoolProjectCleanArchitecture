@@ -190,4 +190,13 @@
   <data name="SignUpSuccess" xml:space="preserve">
     <value />
   </data>
+  <data name="ChangePasswordSuccess" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PasswordInCorrect" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UserNameNotFound" xml:space="preserve">
+    <value />
+  </data>
 </root>

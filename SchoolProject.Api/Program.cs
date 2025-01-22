@@ -7,6 +7,7 @@ using SchoolProject.infrustructure;
 using SchoolProject.infrustructure.DbContext;
 using SchoolProject.Service;
 using System.Globalization;
+using SchoolProject.Api.Configurations.Swagger;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,13 +19,14 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 #region Dependencies
-builder.Services.AddInfrustructureDependencies().AddCoreDependencies().AddServiceDependencies().AddServiceRegisteration();
+builder.Services.AddInfrustructureDependencies().AddCoreDependencies().AddServiceDependencies().AddServiceRegisteration(builder.Configuration);
+builder.Services.AddSwagger();
 #endregion
 
 #region Connection
 builder.Services.AddDbContext<ApplicationDbContext>(opt =>
 {
-    opt.UseSqlServer(builder.Configuration.GetConnectionString("DefualtConnection"));
+    opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 #endregion
 
@@ -48,12 +50,11 @@ builder.Services.Configure<RequestLocalizationOptions>(options =>
 
 #endregion
 
-
 #region AllowCORS
-var CORS = "_cors";
+const string cors = "_cors";
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy(name: CORS,
+    options.AddPolicy(name: cors,
                       policy =>
                       {
                           policy.AllowAnyHeader();
@@ -74,12 +75,7 @@ try
 {
     var DbContext = services.GetRequiredService<ApplicationDbContext>();
     await DbContext.Database.MigrateAsync();
-
-    //var IdentityDbContext = services.GetRequiredService<AppIdentityContext>();
-    //await IdentityDbContext.Database.MigrateAsync();
-    //Identity seed 
-    //var userManger = services.GetRequiredService<UserManager<AppUser>>();
-    //await AppDbcontextSeed.SeedUserAsync(userManger);
+    
 }
 catch (Exception ex)
 {
@@ -103,7 +99,8 @@ app.UseRequestLocalization(options.Value);
 #endregion
 app.UseMiddleware<ErrorHandlerMiddleware>();
 app.UseHttpsRedirection();
-app.UseCors(CORS);
+app.UseCors(cors);
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

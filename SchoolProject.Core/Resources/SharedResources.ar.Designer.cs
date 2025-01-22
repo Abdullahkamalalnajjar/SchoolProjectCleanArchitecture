@@ -69,6 +69,15 @@ namespace SchoolProject.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to تم تغير الباسورد الخاص بك .
+        /// </summary>
+        internal static string ChangePasswordSuccess {
+            get {
+                return ResourceManager.GetString("ChangePasswordSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to تأكيد كلمة المرور.
         /// </summary>
         internal static string ConfirmPassword {
@@ -195,6 +204,15 @@ namespace SchoolProject.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to كلمة المرور غير صحيحة.
+        /// </summary>
+        internal static string PasswordInCorrect {
+            get {
+                return ResourceManager.GetString("PasswordInCorrect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to يجب أن تحتوي كلمة المرور على رقم واحد على الأقل (&apos;0&apos;-&apos;9&apos;)..
         /// </summary>
         internal static string PasswordRequiresDigit {
@@ -281,6 +299,15 @@ namespace SchoolProject.Core.Resources {
         internal static string UserName {
             get {
                 return ResourceManager.GetString("UserName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to إسم المستخدم غير موجود.
+        /// </summary>
+        internal static string UserNameNotFound {
+            get {
+                return ResourceManager.GetString("UserNameNotFound", resourceCulture);
             }
         }
     }

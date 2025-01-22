@@ -15,7 +15,7 @@ namespace SchoolProject.Api.Controllers
 
         //GET SingleDepartment
         [HttpGet(Router.DepartmentRouting.GetById)]
-        public async Task<IActionResult> GetStudentByID([FromRoute] int id)
+        public async Task<IActionResult> GetStudentById([FromRoute] int id)
         {
             var request = new GetDepartmentByIdQuery(id);
             var response = await Mediator.Send(request);

@@ -62,9 +62,4 @@
     </Compile>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Features\Users\Queries\" />
-    <Folder Include="Mapping\Users\Queries\" />
-  </ItemGroup>
-
 </Project>

@@ -25,4 +25,7 @@ public static class SharedResourcesKeys
     public const string Password = "Password";
     public const string UserName = "UserName";
     public const string SignUpSuccess = "SignUpSuccess";
+    public const string ChangePasswordSuccess = "ChangePasswordSuccess";
+    public const string UserNameNotFound = "UserNameNotFound";
+    public const string PasswordInCorrect = "PasswordInCorrect";
 }

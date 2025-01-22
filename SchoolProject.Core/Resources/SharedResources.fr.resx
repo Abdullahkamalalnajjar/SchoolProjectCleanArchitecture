@@ -192,4 +192,10 @@
   <data name="UserName" xml:space="preserve">
     <value>nom d'utilisateur</value>
   </data>
+  <data name="ChangePasswordSuccess" xml:space="preserve">
+    <value>Votre mot de passe a été changé.</value>
+  </data>
+  <data name="PasswordInCorrect" xml:space="preserve">
+    <value>mot de passe incorrect</value>
+  </data>
 </root>

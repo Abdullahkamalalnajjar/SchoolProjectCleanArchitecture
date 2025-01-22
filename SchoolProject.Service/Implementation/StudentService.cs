@@ -71,9 +71,31 @@ namespace SchoolProject.Service.Implementation
             return _studentRepository.GetTableNoTracking().Where(d => d.DepartmentId == DID).AsQueryable();
         }
 
-        public IQueryable<Student> FilterStudentsQueryable(StudentOrderingEnum orderingEnum, string search)
+       
+        public IQueryable<Student> FilterStudentPaginatedQuerable(StudentOrderingEnum orderingEnum, string search)
         {
-            throw new NotImplementedException();
+            var querable = _studentRepository.GetTableNoTracking().Include(x => x.Department).AsQueryable();
+            if (search!=null)
+            {
+                querable = querable.Where(x => x.Name.Contains(search)||x.Address.Contains(search));
+            }
+            switch (orderingEnum)
+            {
+                case StudentOrderingEnum.StudentId:
+                    querable=querable.OrderBy(x => x.Id);
+                    break;
+                case StudentOrderingEnum.Name:
+                    querable=querable.OrderBy(x => x.Name);
+                    break;
+                case StudentOrderingEnum.Address:
+                    querable=querable.OrderBy(x => x.Address);
+                    break;
+                case StudentOrderingEnum.DepartmentName:
+                    querable=querable.OrderBy(x => x.Department.Name);
+                    break;
+            }
+
+            return querable;
         }
     }
 }

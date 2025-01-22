@@ -9,8 +9,10 @@ namespace SchoolProject.Core.Features.Mapping.Students
 
             GetStudentListMapping();
             GetSingleStudentMapping();
+            GetStudentPaginationMapping();
             AddStudentMapping();
             EditStudentMapping();
+            
         }
 
     }

@@ -69,6 +69,15 @@ namespace SchoolProject.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Votre mot de passe a été changé..
+        /// </summary>
+        internal static string ChangePasswordSuccess {
+            get {
+                return ResourceManager.GetString("ChangePasswordSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Confirmez le mot de passe.
         /// </summary>
         internal static string ConfirmPassword {
@@ -191,6 +200,15 @@ namespace SchoolProject.Core.Resources {
         internal static string Password {
             get {
                 return ResourceManager.GetString("Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to mot de passe incorrect.
+        /// </summary>
+        internal static string PasswordInCorrect {
+            get {
+                return ResourceManager.GetString("PasswordInCorrect", resourceCulture);
             }
         }
         
