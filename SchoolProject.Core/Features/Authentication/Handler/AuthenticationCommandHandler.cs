@@ -5,11 +5,12 @@ using SchoolProject.Core.Bases;
 using SchoolProject.Core.Features.Authentication.Model;
 using SchoolProject.Core.Resources;
 using SchoolProject.Data.Entities.Identity;
+using SchoolProject.Data.Helpers;
 using SchoolProject.Service.Abstract;
 
 namespace SchoolProject.Core.Features.Authentication.Handler;
 
-public class AuthenticationCommandHandler: ResponseHandler,IRequestHandler<SignInCommand,Response<string>>
+public class AuthenticationCommandHandler: ResponseHandler,IRequestHandler<SignInCommand,Response<JwtAuthResult>>
 {
     private readonly IAuthenticationService _authenticationService;
     private readonly SignInManager<AppUser> _signInManager;
@@ -24,14 +25,14 @@ public class AuthenticationCommandHandler: ResponseHandler,IRequestHandler<SignI
         _localizer = localizer;
     }
 
-    public async Task<Response<string>> Handle(SignInCommand request, CancellationToken cancellationToken)
+    public async Task<Response<JwtAuthResult>> Handle(SignInCommand request, CancellationToken cancellationToken)
     {
         // checkuser existing or no 
         var user = await _userManager.FindByNameAsync(request.Username);
-        if (user == null) return NotFound<string>();
+        if (user == null) return NotFound<JwtAuthResult>();
         // try to signin
         var signinResult = await _signInManager.CheckPasswordSignInAsync(user, request.Password,false);
-        if (!signinResult.Succeeded) return BadRequest<string>(_localizer[SharedResourcesKeys.PasswordInCorrect]);
+        if (!signinResult.Succeeded) return BadRequest<JwtAuthResult>(_localizer[SharedResourcesKeys.PasswordInCorrect]);
         // Get accessToken
         var accessToken = await _authenticationService.GetTokenAsync(user);
         return Success(accessToken);

@@ -35,6 +35,7 @@ namespace SchoolProject.infrustructure.DbContext
         public DbSet<DepartmetSubject> DepartmetSubjects { get; set; }
         public DbSet<Instructor> Instractors { get; set; }
         public DbSet<SubjectInstractor> SubjectInstractors { get; set; }
+        public DbSet<UserRefreshToken> UserRefreshTokens { get; set; }
 
 
 
