@@ -48,6 +48,13 @@
             private const string Prefix = Rule + "/" + "Authentication/";
             public const string SginIn = Prefix + "SginIn";
         }
+        public static class AuthorizationRouting
+        {
+            private const string Prefix = Rule + "/" + "Authorization/";
+            public const string CreateRole = Prefix + "CreateRole";
+            public const string MangeUserRoles = Prefix + "mange-user-roles/{userId}";
+            public const string UpdateRole = Prefix + "UpdateRole";
 
+        }
     }
 }

@@ -199,4 +199,7 @@
   <data name="UserNameNotFound" xml:space="preserve">
     <value />
   </data>
+  <data name="RoleIsExist" xml:space="preserve">
+    <value />
+  </data>
 </root>

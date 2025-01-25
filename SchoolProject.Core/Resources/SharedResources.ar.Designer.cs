@@ -258,6 +258,15 @@ namespace SchoolProject.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to الدور موجود بالفعل.
+        /// </summary>
+        internal static string RoleIsExist {
+            get {
+                return ResourceManager.GetString("RoleIsExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to تم تسجيل الحساب بنجاح .
         /// </summary>
         internal static string SignUpSuccess {

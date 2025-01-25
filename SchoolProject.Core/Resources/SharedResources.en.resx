@@ -201,4 +201,7 @@
   <data name="UserNameNotFound" xml:space="preserve">
     <value>UserName is NotFound</value>
   </data>
+  <data name="RoleIsExist" xml:space="preserve">
+    <value>Role already exists</value>
+  </data>
 </root>

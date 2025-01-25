@@ -13,6 +13,7 @@ namespace SchoolProject.Service
             services.AddScoped<IDepartmentService, DepartmentService>();
             services.AddScoped<IAppUserService, AppUserService>();
             services.AddScoped<IAuthenticationService, AuthenticationService>();
+            services.AddScoped<IAuthorizationService, AuthorizationService>();
 
             return services;
         }

@@ -7,23 +7,27 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
+using Microsoft.AspNetCore.Identity;
 
 namespace SchoolProject.Service.Implementation;
 
 public class AuthenticationService : IAuthenticationService
 {
+    private readonly RoleManager<IdentityRole> _roleManager;
     private readonly IUserRefreshTokenRepository _refreshTokenRepository;
     private readonly JwtSettings _jwtSettings;
 
-    public AuthenticationService(IUserRefreshTokenRepository userRefreshTokenRepository, JwtSettings jwtSettings)
+    public AuthenticationService(RoleManager<IdentityRole> roleManager,IUserRefreshTokenRepository userRefreshTokenRepository, JwtSettings jwtSettings)
     {
+        _roleManager = roleManager;
         _refreshTokenRepository = userRefreshTokenRepository;
         _jwtSettings = jwtSettings;
     }
 
     public async Task<JwtAuthResult> GetTokenAsync(AppUser user)
     {
-        var claims = GetClaims(user);
+        var roles = _roleManager.Roles.ToList();
+        var claims = GetClaims(user, roles);
         var jwtToken = new JwtSecurityToken(
             issuer: _jwtSettings.Issuer,
             audience: _jwtSettings.Audience,
@@ -74,7 +78,7 @@ public class AuthenticationService : IAuthenticationService
         return Convert.ToBase64String(randomNumber);
     }
 
-    private List<Claim> GetClaims(AppUser user)
+    private List<Claim> GetClaims(AppUser user,List<IdentityRole> roles)
     {
         var claims = new List<Claim>()
         {
@@ -83,6 +87,12 @@ public class AuthenticationService : IAuthenticationService
             new Claim(nameof(UserClaimModel.PhoneNumber), user.PhoneNumber),
             new Claim(nameof(UserClaimModel.Id), user.Id)
         };
+        foreach (var role in roles)
+        {
+            claims.Add(new Claim(ClaimTypes.Role, role.Name));
+        }
+        
+        
         return claims;
     }
 }

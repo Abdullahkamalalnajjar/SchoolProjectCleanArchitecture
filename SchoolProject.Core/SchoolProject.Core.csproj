@@ -62,4 +62,9 @@
     </Compile>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\Authorization\Command\" />
+    <Folder Include="Features\Authorization\Queries\Response\" />
+  </ItemGroup>
+
 </Project>

@@ -28,4 +28,5 @@ public static class SharedResourcesKeys
     public const string ChangePasswordSuccess = "ChangePasswordSuccess";
     public const string UserNameNotFound = "UserNameNotFound";
     public const string PasswordInCorrect = "PasswordInCorrect";
+    public const string RoleIsExist = "RoleIsExist";
 }

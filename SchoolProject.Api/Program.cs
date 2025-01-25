@@ -7,7 +7,10 @@ using SchoolProject.infrustructure;
 using SchoolProject.infrustructure.DbContext;
 using SchoolProject.Service;
 using System.Globalization;
+using Microsoft.AspNetCore.Identity;
 using SchoolProject.Api.Configurations.Swagger;
+using SchoolProject.Data.Entities.Identity;
+using SchoolProject.infrustructure.Seeder;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -65,6 +68,23 @@ builder.Services.AddCors(options =>
 
 #endregion
 var app = builder.Build();
+
+#region Seeder
+using (var createscope = app.Services.CreateScope())
+{
+    var userManger = createscope.ServiceProvider.GetRequiredService<UserManager<AppUser>>();
+    var roleManger = createscope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+    await UserSeeder.SeedAsync(userManger);
+    await RolesSeeder.SeedAsync(roleManger);
+}
+
+;
+
+
+#endregion
+
+
+
 
 #region Update
 //update database
